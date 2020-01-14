@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="372.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciador.controller.AnchorPaneProcessoVendasController">
+   <children>
+      <SplitPane dividerPositions="0.4197324414715719" layoutX="164.0" layoutY="74.0" prefHeight="372.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="tableViewVendas" layoutX="39.0" layoutY="29.0" prefHeight="370.0" prefWidth="265.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="tableVendaColumnCodigo" prefWidth="59.0" text="Código" />
+                      <TableColumn fx:id="tableVendaColumnData" prefWidth="81.0" text="Data" />
+                        <TableColumn fx:id="tableVendaColumnCliente" prefWidth="105.0" text="Cliente" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="77.0" layoutY="14.0" text="Detalhes da Venda">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <GridPane layoutX="25.0" layoutY="93.0" prefHeight="160.0" prefWidth="283.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="105.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="178.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Código" />
+                        <Label text="Data" GridPane.rowIndex="1" />
+                        <Label text="Valor" GridPane.rowIndex="2" />
+                        <Label text="Pago" GridPane.rowIndex="3" />
+                        <Label text="Cliente" GridPane.rowIndex="4" />
+                        <Label fx:id="labelVendaCodigo" GridPane.columnIndex="1" />
+                        <Label fx:id="labelVendaData" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="labelVendaValor" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="labelVendaPago" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="labelVendaCliente" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+                  <Group layoutX="77.0" layoutY="308.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <children>
+                        <Button fx:id="buttonInserir" layoutX="91.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleButtonInserir" prefHeight="31.0" prefWidth="80.0" text="Inserir" />
+                        <Button fx:id="buttonRemover" layoutX="182.0" mnemonicParsing="false" onAction="#handleButtonRemover" prefHeight="31.0" prefWidth="80.0" text="Remover" />
+                     </children>
+                  </Group>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

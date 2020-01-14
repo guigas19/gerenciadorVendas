@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="372.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciador.controller.AnchorPaneCadastrosProdutosController">
+   <children>
+      <SplitPane dividerPositions="0.4080267558528428" layoutX="6.0" layoutY="14.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="tableViewProdutos" layoutX="14.0" layoutY="14.0" prefHeight="398.0" prefWidth="241.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="tableColumnProdutoCodigo" prefWidth="69.0" text="Codigo" />
+                      <TableColumn fx:id="tableColumnProdutoNome" prefWidth="169.0" text="Nome" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="88.0" layoutY="22.0" text="Detalhes do Produto">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <GridPane layoutX="63.0" layoutY="113.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Categoria" />
+                        <Label text="Preço" GridPane.rowIndex="1" />
+                        <Label text="Quantidade" GridPane.rowIndex="2" />
+                        <Label fx:id="labelProdutoCategoria" GridPane.columnIndex="1" />
+                        <Label fx:id="labelProdutoPreço" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="labelProdutoQuantidade" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <Group layoutX="47.0" layoutY="319.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <children>
+                        <Button fx:id="buttonAlterar" layoutX="93.0" mnemonicParsing="false" onAction="#handleButtonAlterar" prefHeight="31.0" prefWidth="84.0" text="Alterar" />
+                        <Button fx:id="buttonRemover" layoutX="185.0" mnemonicParsing="false" onAction="#handleButtonRemover" prefHeight="31.0" prefWidth="84.0" text="Remover" />
+                        <Button fx:id="buttonInserir" mnemonicParsing="false" onAction="#handleButtonInserir" prefHeight="31.0" prefWidth="84.0" text="Inserir" />
+                     </children>
+                  </Group>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
